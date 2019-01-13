@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+SITE_ID = 1
 
 
 WSGI_APPLICATION = 'familie.wsgi.application'
