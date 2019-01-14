@@ -6,10 +6,11 @@ DEBUG = True
 
 DATABASES = {
     'default':
-            read_pgpass(
-                'mwebaza_enterprise',
-                host='localhost',
-                engine='django.db.backends.postgresql_psycopg2')
+        read_pgpass(
+            'mwebaza_enterprise',
+            env='dev',
+            host='localhost',
+            engine='django.db.backends.postgresql_psycopg2')
 }
 
 MEDIA_URL = "/media/"
