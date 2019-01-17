@@ -11,3 +11,4 @@ Using Pycharm?
 - Set upstream to remote with `git push -u origin { NAME OF NEW BRANCH }` e.g. `git push -u origin 1-Adding-Bootstrap`
 - In github - add a milestone, a project and create or add existing tags
 - Start CODING
+# fam-kyagulanyi-cms
