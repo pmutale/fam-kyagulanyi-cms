@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/fam-kyagulanyi-cms
     docker:
-      - image: circleci/python:3.6.0
+      - image: circleci/python:3.6.1
         environment:
           PIPENV_VENV_IN_PROJECT: true
           DATABASE_URL: postgresql://localhost:5432/mwebaza_enterprise
