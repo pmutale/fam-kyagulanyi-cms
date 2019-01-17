@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from rest_framework_swagger.views import get_swagger_view
+from rest_framework.documentation import include_docs_urls
+
+schema_view = get_swagger_view(title='Mwebaza API')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^swagger-docs/', get_swagger_view),
+    url(r'^docs/', include_docs_urls(
+        title='Mwebaza API',
+        authentication_classes=[],
+        permission_classes=[])
+        ),
 ]
