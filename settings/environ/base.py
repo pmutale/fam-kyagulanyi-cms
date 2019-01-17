@@ -7,6 +7,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "themes",
     "rest_framework",
     "rest_framework_swagger",
 ]
@@ -27,7 +28,7 @@ ROOT_URLCONF = "familie.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [fam-kyagulanyi-cms/Templates],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
