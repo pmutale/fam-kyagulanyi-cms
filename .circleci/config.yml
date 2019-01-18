@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.6.1
 
 
-    working_directory: ~/repo
+    working_directory: ~/fam-kyagulanyi-cms
 
     steps:
       - checkout
@@ -13,7 +13,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "fam-kyagulanyi-cms/requirements.txt" }}
+          - v1-dependencies-{{ checksum "requirements.txt" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
@@ -22,7 +22,8 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r fam-kyagulanyi-cms/requirements.txt
+            pip install --upgrade pip
+            pip install -r requirements.txt
 
       - save_cache:
           paths:
@@ -33,7 +34,6 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            cd fam-kyagulanyi-cms
             python manage.py test
 
       - store_artifacts:

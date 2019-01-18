@@ -9,6 +9,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 	"themes",
     "rest_framework",
+    "rest_framework_swagger",
 ]
 
 MIDDLEWARE = [
