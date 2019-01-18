@@ -1,0 +1,77 @@
+.tangmonav{
+	background:#171515; 
+	font-family:Verdana,sans-serif;
+	
+}
+.tangmo{
+	height:20px;
+	background:#171515; 
+	font-size:12px;
+	line-height:1;
+	border:2px solid #171515;
+	border-radius:0px;
+	margin-bottom: 0px !important;
+	}
+
+ .tangmo  .navbar-nav> li > a{
+	color: white; /*Change active text color here*/
+	
+    }
+ .nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: silver; /*Change rollover cell color here*/
+  }
+
+.tangmo1{
+	background:#474343; 
+	font-family:Verdana,sans-serif;
+	font-size:12px;
+	line-height:1;
+	height:70px;
+	border:2px solid #171515;
+	border-radius:0px;
+	margin-bottom:0px !important;
+	
+	}
+	
+.tangmo1 .navbar-nav> li > a{
+	color: white; /*Change active text color here*/
+	margin-top:0px !important;
+	
+	top:0%
+}
+
+ 
+
+.logo{
+	height:40px;
+	width: 45px;
+	padding-top:0px !important;
+}
+
+
+.tangmoForm {
+	width: 700px !important;
+	margin-left:5px;
+	height:40px;
+}
+  
+.tangmosubmit {
+	margin-left:10px;
+		height:40px;
+}  
+
+.tangmo2{
+	background: #171515; 
+	font-size:12px;
+	line-height:1;
+	border:2px solid #171515;
+	border-radius:0px;
+	
+	}
+	
+.tangmo2 .navbar-nav> li > a{
+	color: white; /*Change active text color here*/
+	margin-top:0px !important;
+	
+}
