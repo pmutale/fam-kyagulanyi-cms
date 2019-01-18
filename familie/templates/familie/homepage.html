@@ -1,0 +1,15 @@
+{% load cms_tags sekizai_tags %}
+{% load render_bundle from webpack_loader %}
+<html>
+    <head>
+        <title>{% page_attribute "page_title" %}</title>
+        {% render_block "css" %}
+        {% render_bundle 'main' 'css' %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        {% placeholder "content" %}
+        {% render_block "js" %}
+        {% render_bundle 'main' 'js' %}
+    </body>
+</html>

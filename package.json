@@ -1,0 +1,44 @@
+{
+  "name": "fam-kyagulanyi-cms",
+  "version": "1.0.0",
+  "description": "Frontend to Mwebaza API",
+  "main": "app.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack/webpack.local.config.js --progress --colors",
+    "build-production": "webpack --config webpack.prod.config.js --progress --colors",
+    "watch": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmutale/fam-kyagulanyi-cms.git"
+  },
+  "author": "P. Mutale and I. Tendo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmutale/fam-kyagulanyi-cms/issues"
+  },
+  "homepage": "https://github.com/pmutale/fam-kyagulanyi-cms#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^2.1.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.4",
+    "webpack-bundle-tracker": "^0.4.2-beta",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}

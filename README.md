@@ -11,4 +11,19 @@ Using Pycharm?
 - Set upstream to remote with `git push -u origin { NAME OF NEW BRANCH }` e.g. `git push -u origin 1-Adding-Bootstrap`
 - In github - add a milestone, a project and create or add existing tags
 - Start CODING
-# fam-kyagulanyi-cms
+
+#### Database Setup
+Postgres?
+- Create a `.pgpass` file in the format
+ 
+```hostname:port:database:username:password:commit```
+- PSQL into postgres `sudo -u posgres psql`
+- Create database *mwebaza_enterprise* with password => _mwebaza_
+   ```
+    CREATE DATABASE mwebaza_enterprise;
+    CREATE USER youruser WITH ENCRYPTED PASSWORD 'mwebaza';
+    GRANT ALL PRIVILEGES ON DATABASE mwebaza TO mwebaza;
+    ```
+    
+- Run migrations with `python manage.py migrate`
+- Create a superuser `python manage.py createsuperuser --username xxx --email example@example.domain`
