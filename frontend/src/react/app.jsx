@@ -1,5 +1,5 @@
-import '../scss/main.scss'
+import "../scss/main.scss"
 import App from "./app";
 import React from "react";
 
-React.render(<App/>, document.getElementById('mwebaza'));
+React.render(<App/>, document.getElementById("mwebaza"));
