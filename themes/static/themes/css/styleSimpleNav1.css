@@ -1,0 +1,35 @@
+html{
+	background:#d8c773;
+}
+
+.tangmoNav{
+	background:#786d6d;
+	font-family:calibri;
+	border:0;
+	border-radius:0
+	}
+
+.tangmoNav  .navbar-nav> li > a{
+	color: white; /*Change active text color here*/
+	
+    }
+	
+
+.logo{
+	height:40px;
+	width: 45px;
+	margin-left:80px;
+	margin-top:5px;
+	}
+.tangmoMenu{
+	margin-left:300px;
+}
+
+.tangmoMenu li {
+	margin-left:75px;
+}
+
+
+.tangmoMenu{
+	margin-left:300px;
+}
