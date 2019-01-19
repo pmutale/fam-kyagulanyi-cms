@@ -1,18 +1,17 @@
 from settings.core import *
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
+
     "djangocms_admin_style",
+    "django.contrib.admin",
     "django.contrib.sites",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "rest_framework",
-    "rest_framework_swagger",
-    "webpack_loader",
 
+    # Django CMS
     "cms",
     "menus",
     "treebeard",
@@ -29,6 +28,14 @@ INSTALLED_APPS = [
     "djangocms_snippet",
     "djangocms_style",
     "djangocms_column",
+
+    # Django Rest Framework
+    "rest_framework",
+    "rest_framework_swagger",
+    "webpack_loader",
+
+    # My Apps
+
 
 ]
 
@@ -96,8 +103,12 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "assets"),
+    os.path.join(BASE_DIR, "static"),
 )
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 LANGUAGES = [
     ("en", "English"),
@@ -108,6 +119,7 @@ LANGUAGES = [
 
 CMS_TEMPLATES = [
     ("familie/homepage.html", "Home Page"),
+    ("familie/contentpage.html", "Content Page"),
 ]
 
 THUMBNAIL_HIGH_RESOLUTION = True

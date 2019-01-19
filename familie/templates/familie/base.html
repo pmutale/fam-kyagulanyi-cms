@@ -1,0 +1,25 @@
+{% load cms_tags sekizai_tags i18n %}
+{% load render_bundle from webpack_loader %}
+
+{% get_current_language as  LANGUAGE_CODE %}
+
+<html lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <title>{% page_attribute "page_title" %}</title>
+        {% render_block "css" %}
+        {% render_bundle 'main' 'css' %}
+        {% include "familie/main/styles.html" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+{#        {% include 'main/page/header.html' %}#}
+        {% block content %}
+
+                {% placeholder "content" %}
+        {% endblock content %}
+        {% render_block "js" %}
+{#        {% include "main/page/footer.html" %}#}
+        {% include "familie/main/scripts.html" %}
+        {% render_bundle 'main' 'js' %}
+    </body>
+</html>

@@ -1,6 +1,6 @@
 from settings.environ.base import *
 
-ALLOWED_HOSTS = ["mwebaza.localhost", ]
+ALLOWED_HOSTS = ["mwebaza.localhost", "*"]
 
 DEBUG = True
 
