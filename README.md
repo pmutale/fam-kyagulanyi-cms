@@ -45,6 +45,7 @@ Semantic UI
        ```
    -  Build Sematic UI 
       ```
+      $ npm install  #Run after npm exists!
       $ npm install semantic-ui --save
       => When asked "Where should we put Semantic UI"... use `static/` folder
       $ npm install -i gulp
