@@ -20,9 +20,9 @@ new WebpackDevServer(webpack(config), {
   historyApiFallback: true
 }).listen(port, hostname, function (err, result) {
   if (err) {
-    console.error(err)
+    console.error(err);
   }
 
   console.log("Listening at 0.0.0.0:9090");
-  console.log("Entry", config.entry)
+  console.log("Entry", config.entry);
 });

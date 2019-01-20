@@ -8,11 +8,11 @@ module.exports = {
 
   entry: "../frontend/src/react/app",
 
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
 
   devServer: {
         headers: {
-            'Access-Control-Allow-Origin': '*'
+            "Access-Control-Allow-Origin": "*"
         }
     },
 
@@ -32,7 +32,7 @@ module.exports = {
     // modulesDirectories: ["node_modules", "bower_components"],
     extensions: [".js", ".jsx"],
     // alias: {
-    //     '../../theme.config$': path.join(__dirname, 'theming/theme.config')
+    //     "../../theme.config$": path.join(__dirname, "theming/theme.config")
   // },
 }
 }
