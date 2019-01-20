@@ -35,23 +35,23 @@ Semantic UI
     At the root of your project run the following commands. If you dont have `npm` checkout the
     following guidelines.
     
-      -  Install `npm` on Windows 
-         https://blog.teamtreehouse.com/install-node-js-npm-windows
-      -  Install `npm` on Linux
-         ```
-         $ sudo apt-get update
-         $ sudo apt-get install npm nodejs
-         $ npm --version # _Should output a version number_
-         ```
-      -  Build Sematic UI 
-         ```
-          $ npm install semantic-ui --save
+    -  Install `npm` on Windows 
+       https://blog.teamtreehouse.com/install-node-js-npm-windows
+    -  Install `npm` on Linux
+       ```
+        $ sudo apt-get update
+        $ sudo apt-get install npm nodejs
+        $ npm --version # _Should output a version number_
+       ```
+   -  Build Sematic UI 
+      ```
+        $ npm install  #Run after npm/node is installed!
+        $ npm install semantic-ui --save
             => When asked "Where should we put Semantic UI"... use `static/` folder
-          $ npm install -i gulp
-          $ cd static/semantic/
-          $ gulp build
-
-         ```
+        $ npm install gulp --global
+        $ cd static/semantic/
+        $ gulp build
+      ```
   -  Getting started:
       -  In your `etc/hosts` file you should create an endpoint for the application. Edit your hosts
          file and add the following.
