@@ -32,18 +32,20 @@ Postgres?
 Semantic UI
 
   -  Install Semantic UI with `npm`
-    At the root of your project run the following commands. If you dont have `npm` checkout the
-    following guidelines.
+     
+     At the root of your project run the following commands. If you dont have `npm` checkout the
+     following guidelines.
     
-    -  Install `npm` on Windows 
-       https://blog.teamtreehouse.com/install-node-js-npm-windows
-    -  Install `npm` on Linux
-       ```
-        $ sudo apt-get update
-        $ sudo apt-get install npm nodejs
-        $ npm --version # _Should output a version number_
-       ```
-   -  Build Sematic UI 
+     -  Install `npm` on Windows 
+        https://blog.teamtreehouse.com/install-node-js-npm-windows
+        
+     -  Install `npm` on Linux
+        ```
+          $ sudo apt-get update
+          $ sudo apt-get install npm nodejs
+          $ npm --version # _Should output a version number_
+        ```
+  -  Build Sematic UI 
       ```
         $ npm install  #Run after npm/node is installed!
         $ npm install semantic-ui --save
@@ -53,12 +55,12 @@ Semantic UI
         $ gulp build
       ```
   -  Getting started:
-      -  In your `etc/hosts` file you should create an endpoint for the application. Edit your hosts
+     -  In your `etc/hosts` file you should create an endpoint for the application. Edit your hosts
          file and add the following.
         
          `127.0.0.1   mwebaza.localhost`
       
-      -  To be able to get the application running. You have to build the scripts and start the server
+     -  To be able to get the application running. You have to build the scripts and start the server
          ```
           $ npm run watch
          ```
