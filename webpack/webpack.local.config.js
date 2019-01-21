@@ -9,7 +9,7 @@ config.mode = "development";
 config.entry = [
   "webpack-dev-server/client?http://0.0.0.0:9090/",
   "webpack/hot/only-dev-server",
-  'react-hot-loader/patch',
+  "react-hot-loader/patch",
   "../frontend/src/react/app",
 ];
 
@@ -22,7 +22,7 @@ config.plugins = config.plugins.concat([
   // new webpack.NoErrorsPlugin(),
   new BundleTracker({filename: "./webpack-stats.json"}),
   new ExtractTextPlugin({
-     filename: '[name].[hash].css',
+     filename: "[name].[hash].css",
    }),
 ]);
 
