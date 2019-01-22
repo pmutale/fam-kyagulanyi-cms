@@ -1,1 +1,1 @@
-from settings.environ.dev import *
+from settings.environ.prod import *
