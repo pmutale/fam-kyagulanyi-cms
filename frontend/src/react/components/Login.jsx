@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Form, Grid, Header, Message, Segment, Icon } from "semantic-ui-react";
 import Cookies from "js-cookie";
 
-// import
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -16,8 +15,8 @@ class LoginForm extends React.Component {
         error: "",
         status: false
       }
-    }
-    this.onSubmit = this.onSubmit.bind(this)
+    };
+    this.onSubmit = this.onSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -55,14 +54,14 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    const { loginCreditials: { username, password }, loginErrors: { status, error } } = this.state
+    const { loginCreditials: { username, password }, loginErrors: { status, error } } = this.state;
     const formStyle = {
       position: 'absolute',
       transform: 'translate(-50%, -50%)',
       left: '50%',
       top: '50%',
       width: '50%'
-    }
+    };
     return (
       <div style={formStyle} className="login-form">
         <Grid centered>
@@ -111,6 +110,6 @@ class LoginForm extends React.Component {
       </div>
     );
   };
-};
+}
 
 export default LoginForm
