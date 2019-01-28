@@ -36,15 +36,15 @@ class LoginForm extends React.Component {
           if (data.error) {
             loginErrors.error = data.error;
             loginErrors.status = true;
-            this.setState({loginErrors})
+            this.setState({loginErrors});
           } else {
             loginErrors.error = null;
             loginErrors.status = false;
-            this.setState(loginErrors)
+            this.setState(loginErrors);
           }
         })
       )
-      .catch(error => console.error('Login Error', error))
+      .catch(error => console.error('Login Error', error));
   }
 
   handleChange(e, { name, value }) {
