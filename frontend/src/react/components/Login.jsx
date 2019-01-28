@@ -50,7 +50,7 @@ class LoginForm extends React.Component {
   handleChange(e, { name, value }) {
     const loginCreditials = this.state.loginCreditials;
     loginCreditials[name] = value;
-    this.setState(loginCreditials)
+    this.setState(loginCreditials);
   }
 
   render() {
