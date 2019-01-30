@@ -12,13 +12,14 @@
     </head>
     <body>
         {% cms_toolbar %}
-{#        {% include 'main/page/header.html' %}#}
+        <div id="mwebaza"></div>
+        {% include 'familie/main/components/header.html' %}
         {% block content %}
 
                 {% placeholder "content" %}
         {% endblock content %}
         {% render_block "js" %}
-{#        {% include "main/page/footer.html" %}#}
+        {% include "familie/main/components/footer.html" %}
         {% include "familie/main/scripts.html" %}
         {% render_bundle 'main' 'js' %}
     </body>

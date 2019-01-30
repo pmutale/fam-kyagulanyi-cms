@@ -33,8 +33,10 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_swagger",
     "webpack_loader",
+    "rest_framework.authtoken",
 
     # My Apps
+    "access_control",
 
 
 ]
@@ -53,6 +55,16 @@ MIDDLEWARE = [
     "cms.middleware.toolbar.ToolbarMiddleware",
     "cms.middleware.language.LanguageCookieMiddleware",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
 
 ROOT_URLCONF = "familie.urls"
 
