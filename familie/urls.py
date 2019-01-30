@@ -24,6 +24,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^users/', include('access_control.urls')),
     url(r'^', include('cms.urls')),
     url(r'^swagger-docs/', get_swagger_view),
     url(r'^docs/', include_docs_urls(
