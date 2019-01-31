@@ -91,7 +91,7 @@ env.bak/
 venv.bak/
 node_modules/
 assets/
-static/
+#static/assets
 webpack-stats.json
 
 # Spyder project settings
@@ -107,3 +107,6 @@ webpack-stats.json
 # mypy
 .mypy_cache/
 .idea/
+/static/bundles/
+/static/semantic/
+/static/assets/
