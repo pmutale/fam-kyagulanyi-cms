@@ -107,6 +107,5 @@ webpack-stats.json
 # mypy
 .mypy_cache/
 .idea/
-/static/bundles/
 /static/semantic/
 /static/assets/
