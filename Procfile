@@ -1,2 +1,2 @@
-release: npm install && npm run build
+release: sudo apt-get install npm nodejs
 web: gunicorn familie.wsgi
