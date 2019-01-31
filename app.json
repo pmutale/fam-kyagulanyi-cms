@@ -2,7 +2,7 @@
   "name": "fam-kyagulanyi-cms",
   "description": "Kirumba",
   "scripts": {
-    "postdeploy": "python manage.py makemigrations",
+    "postdeploy": "python manage.py migrate",
     "pr-predestroy": "npm run build"
   },
   "env": {
