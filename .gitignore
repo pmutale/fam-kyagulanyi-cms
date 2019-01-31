@@ -109,3 +109,4 @@ webpack-stats.json
 .idea/
 /static/semantic/
 /static/assets/
+/static/bundles/
