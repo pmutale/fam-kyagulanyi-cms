@@ -14,6 +14,12 @@ DATABASES = {
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/assets")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-prd.json'),
+    }
+}
 # django_heroku.settings(locals())

@@ -111,3 +111,4 @@ webpack-stats.json
 #/static/assets/
 #/static/bundles/
 /webpack-stats-prod.json
+/static/bundles/

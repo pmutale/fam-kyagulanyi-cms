@@ -54,14 +54,6 @@ config.module.rules.push(
       "sass-loader",
     ]
   },
-  // {
-  //   test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-  //   loader: 'url-loader',
-  //   options: {
-  //     limit: 30000,
-  //     name: 'fonts/[name].[ext]',
-  //   },
-  // },
   { test: /\.jpe?g$|\.gif$|\.ico$|\.png$|\.svg$/, use: "file-loader?name=[name].[ext]?[hash]" },
   { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=30000&mimetype=application/font-woff" },
   { test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?name=" },

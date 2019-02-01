@@ -11,6 +11,7 @@ config.entry = [
   "webpack/hot/only-dev-server",
   "react-hot-loader/patch",
   "../frontend/src/react/app",
+  "../frontend/src/scss/main"
 ];
 
 // override django"s STATIC_URL for webpack bundles
@@ -29,8 +30,7 @@ config.plugins = config.plugins.concat([
 // Add a loader for JSX files with react-hot enabled
 config.module.rules.push(
   { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
-  { test: /\.css$/, exclude: /node_modules/, use: ["style-loader", "css-loader"] },
-  { test: /\.scss$/, use: ExtractTextPlugin.extract({
+  { test: /\.(scss|css)$/, use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           use: ["css-loader", "sass-loader"]
         })},
@@ -38,7 +38,7 @@ config.module.rules.push(
           fallback: "style-loader",
           use: ["css-loader", "less-loader"]
         })},
-  { test: /\.jpe?g$|\.gif$|\.ico$|\.png$|\.svg$/, use: "file-loader?name=[name].[ext]?[hash]" },
+  { test: /\.jpe?g$|\.gif$|\.ico$|\.png$|\.svg$/, loader: "file-loader?name=[name].[ext]?[hash]" },
   { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
   { test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?name=" },
   { test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
