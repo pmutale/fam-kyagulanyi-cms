@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack/webpack.local.config.js --progress --colors",
-    "build-production": "webpack --config app/webpack/webpack.prod.config.js --progress --colors",
+    "build-production": "webpack --config webpack/webpack.prod.config.js --progress --colors",
     "watch": "node server.js"
   },
   "repository": {
