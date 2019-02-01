@@ -110,5 +110,7 @@ webpack-stats.json
 #/static/semantic/
 #/static/assets/
 #/static/bundles/
-/webpack-stats-prod.json
+#/webpack-stats-prod.json
 /static/bundles/
+/package-lock.json
+/webpack-stats-prod.json

@@ -10,7 +10,7 @@ config.mode = "production";
 config.output.path = require("path").resolve("static/bundles");
 
 config.plugins = config.plugins.concat([
-  new BundleTracker({filename: "./webpack-stats-prod.json"}),
+  new BundleTracker({filename: "../webpack-stats-prod.json"}),
   new MiniCssExtractPlugin({
     // Options similar to the same options in webpackOptions.output
     // both options are optional
