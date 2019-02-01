@@ -1,6 +1,5 @@
 const path = require("path");
-const webpack = require("webpack");
-const BundleTracker = require("webpack-bundle-tracker");
+
 
 module.exports = {
   mode: "",
@@ -11,28 +10,28 @@ module.exports = {
   devtool: "inline-source-map",
 
   devServer: {
-        headers: {
-            "Access-Control-Allow-Origin": "*"
-        }
-    },
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    }
+  },
 
   output: {
-      path: path.resolve("./static/bundles/"),
-      filename: "[name]-[hash].js"
+    path: path.resolve("./static/bundles/"),
+    filename: "[name]-[hash].js"
   },
 
   plugins: [
-  ], // add all common plugins here
+  ],
 
   module: {
     rules: [] // add all common loaders here
   },
 
+  optimization: {
+    minimizer: []
+  },
+
   resolve: {
-    // modulesDirectories: ["node_modules", "bower_components"],
-    extensions: [".js", ".jsx"],
-    // alias: {
-    //     "../../theme.config$": path.join(__dirname, "theming/theme.config")
-  // },
-}
+    extensions: [".js", ".jsx", ".scss", ".sass"],
+  }
 }

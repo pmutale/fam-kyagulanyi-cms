@@ -90,7 +90,7 @@ ENV/
 env.bak/
 venv.bak/
 node_modules/
-assets/
+#assets/
 #static/assets
 webpack-stats.json
 
@@ -107,6 +107,7 @@ webpack-stats.json
 # mypy
 .mypy_cache/
 .idea/
-/static/semantic/
-/static/assets/
-/static/bundles/
+#/static/semantic/
+#/static/assets/
+#/static/bundles/
+/webpack-stats-prod.json
