@@ -114,9 +114,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     '/tmp/build_07574127a35dd8fc1de9232085c24f0c/static'
-)
+]
 
 MEDIA_URL = "/media/"
 
