@@ -3,7 +3,7 @@ import django_heroku
 from settings.environ.base import *
 import dj_database_url
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['kirumba.herokuapp.com', '127.0.0.1' ]
 
