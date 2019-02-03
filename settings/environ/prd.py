@@ -14,7 +14,7 @@ DATABASES = {
 DATABASES["default"]["ENGINE"] = "django.db.backends.postgresql_psycopg2"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "staticfiles")
+    os.path.join(BASE_DIR, "static/assets")
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
