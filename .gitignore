@@ -113,4 +113,3 @@ webpack-stats.json
 #/webpack-stats-prod.json
 /static/bundles/
 /package-lock.json
-/webpack-stats-prod.json
