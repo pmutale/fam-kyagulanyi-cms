@@ -7,7 +7,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 config.mode = "production";
 
-config.output.path = require("path").resolve("staticfiles/bundles");
+config.output.path = require("path").resolve("static/bundles");
 
 config.plugins = config.plugins.concat([
   new BundleTracker({filename: "./webpack-stats-prod.json"}),
