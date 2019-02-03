@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.static import serve
 from rest_framework_swagger.views import get_swagger_view
 from rest_framework.documentation import include_docs_urls
 
@@ -32,7 +33,12 @@ urlpatterns = [
         authentication_classes=[],
         permission_classes=[])
         ),
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+   ]
 
