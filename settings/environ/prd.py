@@ -13,9 +13,9 @@ DATABASES = {
 
 DATABASES["default"]["ENGINE"] = "django.db.backends.postgresql_psycopg2"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "staticfiles")
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "staticfiles")
+# ]
 
 APPEND_SLASH = False
 
