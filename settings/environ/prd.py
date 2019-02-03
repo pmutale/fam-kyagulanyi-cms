@@ -29,4 +29,5 @@ WEBPACK_LOADER = {
         "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats-prod.json"),
     }
 }
-# django_heroku.settings(locals())
+
+django_heroku.settings(locals())
