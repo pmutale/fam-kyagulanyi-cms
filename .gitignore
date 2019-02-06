@@ -18,7 +18,7 @@ lib/
 lib64/
 parts/
 sdist/
-var/
+#var/
 wheels/
 *.egg-info/
 .installed.cfg
@@ -93,6 +93,7 @@ node_modules/
 #assets/
 #static/assets
 webpack-stats.json
+webpack-stats-prod.json
 
 # Spyder project settings
 .spyderproject
