@@ -5,5 +5,5 @@ if os.environ.get('IS_HEROKU'):
 elif os.environ.get('AWS_ENV'):
   from settings.environ.aws import *
 else:
-  from setting.environ.dev import *
+  from settings.environ.dev import *
   
