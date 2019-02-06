@@ -191,3 +191,92 @@ def read_pgpass(dbname, host=None, port=None, engine=None, env=None):
                                 )
         print(no_database_found)
     return sys.exit("Error: You don't have a database setup, Please create a ~/.pgpass file ")
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(asctime)s %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'maxBytes': 1024 * 1024 * 2,
+            'backupCount': 15,
+            'filename': os.path.join(BASE_DIR, 'var', 'log', 'mysite.log'),
+            'formatter': 'verbose',
+        },
+        'dbfile': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'maxBytes': 1024 * 1024 * 2,
+            'backupCount': 15,
+            'filename': os.path.join(BASE_DIR, 'var', 'log', 'db.log'),
+            'formatter': 'simple',
+        },
+        'timerfile': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'maxBytes': 1024 * 1024 * 2,
+            'backupCount': 15,
+            'filename': os.path.join(BASE_DIR, 'var', 'log', 'timer.log'),
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'handlers': ['dbfile'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'requesttimer': {
+            'level': 'INFO',
+            'propagate': True,
+            'handlers': ['timerfile'],
+        },
+        '': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'azlcms': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'mail_task': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
+LOG_LEVELS = (
+    ('INFO', 'Info'),
+    ('WARNING', 'Warning'),
+    ('ERROR', 'Error'),
+    ('EXCEPTION', 'Exception')
+)
+

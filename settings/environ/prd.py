@@ -1,27 +1,27 @@
-import django_heroku
+#import django_heroku
 
 from settings.environ.base import *
 import dj_database_url
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["kirumba.herokuapp.com", "127.0.0.1" ]
+ALLOWED_HOSTS = ["kirumba.herokuapp.com", "3.8.232.46", "kirumba.org" ]    
 
 DATABASES = {
-    "default": dj_database_url.config(default=os.environ.get("POSTGRES_URL"), conn_max_age=600, ssl_require=True),
+         "default": dj_database_url.config(default=os.environ.get("POSTGRES_URL"), conn_max_age=600, ssl_require=True),
 }
 
 DATABASES["default"]["ENGINE"] = "django.db.backends.postgresql_psycopg2"
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "staticfiles")
-# ]
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR, "staticfiles")
+]
 
 APPEND_SLASH = False
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 WEBPACK_LOADER = {
     "DEFAULT": {
@@ -30,4 +30,4 @@ WEBPACK_LOADER = {
     }
 }
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
