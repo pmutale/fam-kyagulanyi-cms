@@ -1,14 +1,14 @@
 pipeline {
     agent none
     stages {
-        stage('Sync databases') {
+        stage('Install Requirements') {
             agent {
                 docker {
-                    image 'python:2-alpine'
+                    image 'python:3-alpine'
                 }
             }
             steps {
-                sh 'python manage.py migrate'
+                sh 'pip install -r requirements.txt'
             }
         }
     }
