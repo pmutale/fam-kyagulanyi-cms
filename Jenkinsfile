@@ -9,7 +9,6 @@ pipeline {
             }
             steps {
                 sh '''
-                    apt-get install virtualenv nodejs
                     virtualenv venv
                     . venv/bin/active
                     pip install -r requirements.txt
