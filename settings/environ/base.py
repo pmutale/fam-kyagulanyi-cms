@@ -1,7 +1,6 @@
 from settings.core import *
 
 INSTALLED_APPS = [
-
     "djangocms_admin_style",
     "django.contrib.admin",
     "django.contrib.sites",
@@ -10,7 +9,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # Django CMS
     "cms",
     "menus",
@@ -28,17 +26,13 @@ INSTALLED_APPS = [
     "djangocms_snippet",
     "djangocms_style",
     "djangocms_column",
-
     # Django Rest Framework
     "rest_framework",
     "rest_framework_swagger",
     "webpack_loader",
     "rest_framework.authtoken",
-
     # My Apps
     "access_control",
-
-
 ]
 
 MIDDLEWARE = [
@@ -57,13 +51,11 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
     ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    )
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
 }
 
 ROOT_URLCONF = "familie.urls"
@@ -80,8 +72,7 @@ AUTH_PASSWORD_VALIDATORS = [
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["familie/templates",
-                 os.path.join(BASE_DIR, 'templates')],
+        "DIRS": ["familie/templates", os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -118,12 +109,7 @@ MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-LANGUAGES = [
-    ("en", "English"),
-    ("sw", "Swahili"),
-    ("nl", "Nederlands"),
-
-]
+LANGUAGES = [("en", "English"), ("sw", "Swahili"), ("nl", "Nederlands")]
 
 CMS_TEMPLATES = [
     ("familie/homepage.html", "Home Page"),
@@ -136,7 +122,7 @@ THUMBNAIL_PROCESSORS = (
     "easy_thumbnails.processors.colorspace",
     "easy_thumbnails.processors.autocrop",
     "filer.thumbnail_processors.scale_and_crop_with_subject_location",
-    "easy_thumbnails.processors.filters"
+    "easy_thumbnails.processors.filters",
 )
 
 
@@ -156,23 +142,31 @@ def read_pgpass(dbname, host=None, port=None, engine=None, env=None):
 
     home_path = str(Path.home())
 
-    no_database_found = ("""
+    no_database_found = """
         Your {path}/.pgpass file doesn"t have database "{dbname}" for host "{host}:{port}".
 
         To switch to a PostgreSQL database, add a line to the ~/.pgpass file
         containing it"s credentials.
         See http://www.postgresql.org/docs/9.3/static/libpq-pgpass.html
-        """.format(dbname=dbname, path=home_path, host=host or "*", port=port or "*"))
-    no_pgpass_notification = ("""
+        """.format(
+        dbname=dbname, path=home_path, host=host or "*", port=port or "*"
+    )
+    no_pgpass_notification = """
     You don"t have a {0}/.pgpass file so. Please create one!
 
     To switch to a PostgreSQL database, create a ~/.pgpass file
     containing it"s credentials.
     See http://www.postgresql.org/docs/9.3/static/libpq-pgpass.html
-    """.format(home_path))
+    """.format(
+        home_path
+    )
 
     try:
-        pgpass = os.path.join(home_path, ".pgpass") if not 'dev' in env else os.path.join(BASE_DIR, '.secrets/.pgpass')
+        pgpass = (
+            os.path.join(home_path, ".pgpass")
+            if not "dev" in env
+            else os.path.join(BASE_DIR, ".secrets/.pgpass")
+        )
         pgpass_lines = open(pgpass).read().split()
     except IOError:
         # Print instructions
@@ -181,102 +175,83 @@ def read_pgpass(dbname, host=None, port=None, engine=None, env=None):
         for match in (dbname, "*"):
             for line in pgpass_lines:
                 words = line.strip().split(":")
-                if words[2] == match and words[0] == (host or words[0]) and words[1] == (port or words[1]):
-                    return dict(ENGINE=engine,
-                                NAME=dbname,
-                                USER=words[3],
-                                PASSWORD=words[4],
-                                HOST=words[0],
-                                PORT=words[1],
-                                )
+                if (
+                    words[2] == match
+                    and words[0] == (host or words[0])
+                    and words[1] == (port or words[1])
+                ):
+                    return dict(
+                        ENGINE=engine,
+                        NAME=dbname,
+                        USER=words[3],
+                        PASSWORD=words[4],
+                        HOST=words[0],
+                        PORT=words[1],
+                    )
         print(no_database_found)
-    return sys.exit("Error: You don't have a database setup, Please create a ~/.pgpass file ")
+    return sys.exit(
+        "Error: You don't have a database setup, Please create a ~/.pgpass file "
+    )
+
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
+    "version": 1,
+    "disable_existing_loggers": False,
+    "filters": {"require_debug_false": {"()": "django.utils.log.RequireDebugFalse"}},
+    "formatters": {
+        "verbose": {
+            "format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"
+        },
+        "simple": {"format": "%(asctime)s %(message)s"},
     },
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
         },
-        'simple': {
-            'format': '%(asctime)s %(message)s'
+        "file": {
+            "level": "DEBUG",
+            "class": "logging.handlers.RotatingFileHandler",
+            "maxBytes": 1024 * 1024 * 2,
+            "backupCount": 15,
+            "filename": os.path.join(BASE_DIR, "var", "log", "mysite.log"),
+            "formatter": "verbose",
         },
-    },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple'
+        "dbfile": {
+            "level": "DEBUG",
+            "class": "logging.handlers.RotatingFileHandler",
+            "maxBytes": 1024 * 1024 * 2,
+            "backupCount": 15,
+            "filename": os.path.join(BASE_DIR, "var", "log", "db.log"),
+            "formatter": "simple",
         },
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'maxBytes': 1024 * 1024 * 2,
-            'backupCount': 15,
-            'filename': os.path.join(BASE_DIR, 'var', 'log', 'mysite.log'),
-            'formatter': 'verbose',
-        },
-        'dbfile': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'maxBytes': 1024 * 1024 * 2,
-            'backupCount': 15,
-            'filename': os.path.join(BASE_DIR, 'var', 'log', 'db.log'),
-            'formatter': 'simple',
-        },
-        'timerfile': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'maxBytes': 1024 * 1024 * 2,
-            'backupCount': 15,
-            'filename': os.path.join(BASE_DIR, 'var', 'log', 'timer.log'),
-            'formatter': 'simple',
+        "timerfile": {
+            "level": "DEBUG",
+            "class": "logging.handlers.RotatingFileHandler",
+            "maxBytes": 1024 * 1024 * 2,
+            "backupCount": 15,
+            "filename": os.path.join(BASE_DIR, "var", "log", "timer.log"),
+            "formatter": "simple",
         },
     },
-    'loggers': {
-        'django.request': {
-            'handlers': ['file'],
-            'level': 'INFO',
-            'propagate': True,
+    "loggers": {
+        "django.request": {"handlers": ["file"], "level": "INFO", "propagate": True},
+        "django.db.backends": {
+            "handlers": ["dbfile"],
+            "level": "INFO",
+            "propagate": True,
         },
-        'django.db.backends': {
-            'handlers': ['dbfile'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-        'requesttimer': {
-            'level': 'INFO',
-            'propagate': True,
-            'handlers': ['timerfile'],
-        },
-        '': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-        'azlcms': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-        'mail_task': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
+        "requesttimer": {"level": "INFO", "propagate": True, "handlers": ["timerfile"]},
+        "": {"handlers": ["file"], "level": "DEBUG", "propagate": True},
+        "azlcms": {"handlers": ["file"], "level": "DEBUG", "propagate": True},
+        "mail_task": {"handlers": ["file"], "level": "DEBUG", "propagate": True},
     },
 }
 
 LOG_LEVELS = (
-    ('INFO', 'Info'),
-    ('WARNING', 'Warning'),
-    ('ERROR', 'Error'),
-    ('EXCEPTION', 'Exception')
+    ("INFO", "Info"),
+    ("WARNING", "Warning"),
+    ("ERROR", "Error"),
+    ("EXCEPTION", "Exception"),
 )
-

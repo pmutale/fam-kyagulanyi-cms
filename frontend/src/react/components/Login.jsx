@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, Grid, Header, Message, Segment, Icon } from "semantic-ui-react";
+import { Responsive, Button, Form, Grid, Header, Message, Segment, Icon } from "semantic-ui-react";
 import Cookies from "js-cookie";
 
 
@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
     };
     return (
       <div style={formStyle} className="login-form">
-        <Grid centered>
+        <Responsive as={Grid} centered>
           <Grid.Column>
             <Header as="h2" color="grey" textAlign="center">
               <Icon name="user"/> Log-in to your account
@@ -106,7 +106,8 @@ class LoginForm extends React.Component {
               Are you part of the Family? <a href="#">Sign Up</a>
             </Message>
           </Grid.Column>
-        </Grid>
+        {/*</Grid>*/}
+        </Responsive>
       </div>
     );
   };

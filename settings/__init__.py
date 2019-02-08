@@ -1,9 +1,6 @@
 import os
 
-if os.environ.get('IS_HEROKU'): 
-  from settings.environ.heroku import *
-elif os.environ.get('AWS_ENV'):
-  from settings.environ.aws import *
+if os.environ.get("IS_HEROKU", None) or os.environ.get("AWS_ENV", None):
+    from settings.environ.prd import *
 else:
-  from settings.environ.dev import *
-  
+    from settings.environ.dev import *
