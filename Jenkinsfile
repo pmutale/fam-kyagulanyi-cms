@@ -8,7 +8,15 @@ pipeline {
                 }
             }
             steps {
-                sh 'pip install -r requirements.txt'
+                sh '''
+                    sudo apt-get install virtualenv nodejs
+                    virtualenv venv
+                    . venv/bin/active
+                    pip install -r requirements.txt
+                    python manage.py migrate
+                    python manage.py collectstatic --noinput
+                    npm install && npm run build-production
+                '''
             }
         }
     }
