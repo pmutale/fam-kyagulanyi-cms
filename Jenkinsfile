@@ -16,5 +16,15 @@ pipeline {
                 '''
             }
         }
+        stage('Test') {
+            agent {
+                docker {
+                    image 'python:3-alpine'
+                }
+            }
+            steps {
+                sh 'python manage.py test'
+            }
+        }
     }
 }
