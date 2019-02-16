@@ -244,8 +244,7 @@ LOGGING = {
         },
         "requesttimer": {"level": "INFO", "propagate": True, "handlers": ["timerfile"]},
         "": {"handlers": ["file"], "level": "DEBUG", "propagate": True},
-        "azlcms": {"handlers": ["file"], "level": "DEBUG", "propagate": True},
-        "mail_task": {"handlers": ["file"], "level": "DEBUG", "propagate": True},
+        "familie": {"handlers": ["file"], "level": "DEBUG", "propagate": True},
     },
 }
 
